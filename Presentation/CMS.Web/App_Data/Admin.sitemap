@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap>
+	<siteMapNode url="" title="Menu"  description="">
+		<siteMapNode url="/Admin/Module" title="SubMenu1"  description="">
+			<siteMapNode url="/Admin/ModuleType" title="InnerSubMenu1"  description=""></siteMapNode>
+		</siteMapNode>
+		<siteMapNode url="/Admin/ModuleType" title="SubMenu3"  description=""></siteMapNode>
+	</siteMapNode>
+</siteMap>

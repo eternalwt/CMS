@@ -1,0 +1,67 @@
+﻿.grid-960 {
+	margin-bottom: 10px;
+	
+}
+ 
+.grid-960 .grid-header, .grid-960 .grid-content, .grid-960 .grid-paging {
+	float: left;
+	clear: both;
+	margin-left: 9px;
+	margin-right: 9px;
+}
+.grid-960 .grid-header {
+	border: 1px solid #E5E5E5;
+	border-bottom: 0px;
+	border-radius: 5px 5px 0 0;
+}
+.grid-960 .grid-content {
+	border: 1px solid #E5E5E5;
+	border-top: 0;
+	border-radius: 0 0 5px 5px;
+}
+.grid-960 .grid-content .row, .grid-960 .grid-content .arow {
+	clear: both;
+	float: left;
+	border-top: 1px solid #E5E5E5;
+}
+.grid-960 .grid-content .row {
+}
+.grid-960 .grid-content .arow {
+}
+.grid-960 .grid-content .row:hover, .grid-960 .grid-content .arow:hover {
+	background-color: #f5f5f5;
+}
+.grid-960 .grid-cell {
+	height: 18px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	overflow: hidden;
+}
+.grid-960 .grid-cell input {
+	margin-top: 2px;
+}
+.grid-960 .left {
+	text-align: left;
+}
+.grid-960 .right {
+	text-align: right;
+}
+.grid-960 .center {
+	text-align: center;
+}
+.grid-960 .grid-paging {
+	margin-top: 10px;
+}
+.grid-960 .grid-paging .rows {
+	padding-top: 5px;
+}
+.grid-960 .grid-paging .disp-rows {
+	text-align: center;
+	padding-top: 8px;
+}
+.grid-960  .grid-paging .paging-buttons {
+	text-align: right;
+}
+.grid-960  .grid-paging .paging-buttons .btn{
+	 margin-left: 5px;
+}

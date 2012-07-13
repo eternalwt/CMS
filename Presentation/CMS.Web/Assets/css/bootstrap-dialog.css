@@ -1,0 +1,227 @@
+﻿/* boot dialog */
+.bootdialog-open .dropdown-menu {
+  z-index: 2050;
+}
+.bootdialog-open .dropdown.open {
+  *z-index: 2050;
+}
+.bootdialog-open .popover {
+  z-index: 2060;
+}
+.bootdialog-open .tooltip {
+  z-index: 2070;
+}
+.bootdialog-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000000;
+}
+.bootdialog-backdrop.fade {
+  opacity: 0;
+}
+.bootdialog-backdrop,
+.bootdialog-backdrop.fade.in {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+.bootdialog {
+  position: absolute;
+  top:0;
+  margin:0;
+  padding:0;
+
+  z-index: 1050;
+  overflow: auto;
+  background-color: #ffffff;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  *border: 1px solid #999;
+  /* IE6-7 */
+
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.bootdialog.fade {
+  -webkit-transition: opacity .3s linear, top .3s ease-out;
+  -moz-transition: opacity .3s linear, top .3s ease-out;
+  -ms-transition: opacity .3s linear, top .3s ease-out;
+  -o-transition: opacity .3s linear, top .3s ease-out;
+  transition: opacity .3s linear, top .3s ease-out;
+}
+.bootdialog.fade.in {
+}
+.bootdialog-header {
+  padding: 15px 10px; 
+  border-bottom: 1px solid #eee;
+}
+.bootdialog-header .close {
+  margin-top: 2px;
+}
+.bootdialog-body {
+  padding-top: 9px; 
+  padding-bottom: 9px;
+  min-width: 200px;
+  min-height: 200px;
+}
+.bootdialog-form {
+  margin-bottom: 0;
+}
+.bootdialog-footer {
+ padding: 15px 10px; 
+  margin-bottom: 0;
+  text-align: right;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: inset 0 1px 0 #ffffff;
+  -moz-box-shadow: inset 0 1px 0 #ffffff;
+  box-shadow: inset 0 1px 0 #ffffff;
+  *zoom: 1;
+}
+.bootdialog-footer:before,
+.bootdialog-footer:after {
+  display: table;
+  content: "";
+}
+.bootdialog-footer:after {
+  clear: both;
+}
+.bootdialog-footer .btn + .btn {
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+.bootdialog-footer .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+.bootdialog .loading{
+	background-color: #FFFE00;
+    border: 1px solid #CCC1C1;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+    width: 100px;
+    color: #000;
+}
+.bootdialog .alert-error{margin-left: 10px;
+    margin-right: 10px;
+}
+ 
+.bootdialog .container_12
+{
+	width: 960px;
+}
+
+.bootdialog .col_1,
+.bootdialog .col_2,
+.bootdialog .col_3,
+.bootdialog .col_4,
+.bootdialog .col_5,
+.bootdialog .col_6,
+.bootdialog .col_7,
+.bootdialog .col_8,
+.bootdialog .col_9,
+.bootdialog .col_10,
+.bootdialog .col_11,
+.bootdialog .col_12 {
+	display:inline;
+	float: left;
+	position: relative;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+  
+.bootdialog .alpha {
+	margin-left: 0;
+}
+
+.bootdialog .omega {
+	margin-right: 0;
+}
+
+.bootdialog .col_1 {
+	width:60px;
+}
+
+.bootdialog .col_2 {
+	width:140px;
+}
+
+.bootdialog .col_3 {
+	width:220px;
+}
+
+.bootdialog .col_4 {
+	width:300px;
+}
+
+.bootdialog .col_5 {
+	width:380px;
+}
+
+.bootdialog .col_6 {
+	width:460px;
+}
+
+.bootdialog .col_7 {
+	width:540px;
+}
+
+.bootdialog .col_8 {
+	width:620px;
+}
+
+.bootdialog .col_9 {
+	width:700px;
+}
+
+.bootdialog .col_10 {
+	width:780px;
+}
+
+.bootdialog .col_11 {
+	width:860px;
+}
+
+.bootdialog .col_12 {
+	width:940px;
+}
+
+.bootdialog .clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.bootdialog .clearfix:before,
+.bootdialog .clearfix:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.bootdialog .clearfix:after {
+  clear: both;
+}
+
+.bootdialog .clearfix {
+  zoom: 1;
+}

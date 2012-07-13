@@ -1,0 +1,16 @@
+﻿@model Dictionary<string, string>
+<div class="container page-title-bar">
+	<div class="container_12">
+		<div class="grid_12">
+			<h2>
+				@{
+					string title = string.Empty;
+					if (Model.ContainsKey("title")) {
+						title = Model["title"].ToString();
+					}
+		
+				}
+				@title</h2>
+		</div>
+	</div>
+</div>

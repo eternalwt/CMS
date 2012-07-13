@@ -1,0 +1,49 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+body {
+	padding-top: 50px;
+}
+body, p, input, button, select, textarea, .navbar-search .search-query {
+	font-family: 'Open Sans' , sans-serif, Helvetica, Arial;
+}
+.page-header .tool-bar .btn {
+	margin-left: 10px;
+}
+.pagination.rocord-status {
+	padding-top: 10px;
+	text-align: center;
+}
+.pagination a {
+	cursor: pointer;
+}
+.grid-box .table[class*="span"], .grid-box .table td[class*="span"] {
+	margin-left: 0px;
+}
+.grid-box .table.span12 {
+	width: 940px;
+}
+.grid-box .table.loading {
+	opacity: 0.3;
+	filter: alpha(opacity=70);
+}
+.paging-btns, .rocord-status {
+	text-align: right;
+}
+.paging-btns .btn {
+	margin-left: 5px;
+}
+/* dropdown search */
+.dropdown-menu.dropdown-search{
+	border: 0 none;
+    border-radius: 0 0 0 0;
+    box-shadow: none;
+    margin: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-top: 0;
+}
+.dropdown-search .icon-search{
+	position: absolute;
+    right: 5px;
+    top: 7px;
+}
+/* end dropdown search */

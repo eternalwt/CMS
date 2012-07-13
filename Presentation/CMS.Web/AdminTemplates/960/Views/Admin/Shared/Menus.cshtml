@@ -1,0 +1,46 @@
+﻿@model List<CMS.Web.FrameWork.Models.MenuModel>
+@using CMS.Web.FrameWork.Helpers
+@{
+	var topMenus = Model.Where(m => m.Url == "").ToList();
+}
+<div class="container_24">
+	<div class="grid_24">
+		<div class="top-menu">
+			<ul>
+				@foreach (var menu in topMenus) {
+					<li>@menu.Title</li>
+	}
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="sub-menu">
+	<div class="container_24">
+		<div class="grid_24">
+			@foreach (var topMenu in topMenus) {
+				<ul>
+					@foreach (var menu in topMenu.Childs) {
+		 if (menu.Title != "") {
+						<li id="@menu.Title">
+							@if (string.IsNullOrEmpty(menu.Url) == false) {
+								@Html.Anchor(menu.Title, menu.Url)   
+	   }
+	   else {
+								@menu.Title;
+	   }
+							@if (menu.Childs.Count > 0) {
+		   Html.RenderPartial("Menus", menu.Childs);
+	   }
+						</li>	
+		 }
+		 else {
+			 if (menu.Childs.Count > 0) {
+				 Html.RenderPartial("Menus", menu.Childs);
+			 }
+		 }
+	 }
+				</ul>
+   }
+		</div>
+	</div>
+</div>

@@ -1,0 +1,9 @@
+﻿@model Dictionary<string, string>
+ @{
+	 string title = string.Empty;
+	 if (Model.ContainsKey("title")) {
+		 title = Model["title"].ToString();
+	 }
+		
+ }
+@title

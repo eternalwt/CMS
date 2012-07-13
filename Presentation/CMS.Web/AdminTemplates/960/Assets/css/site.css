@@ -1,0 +1,116 @@
+﻿@import url("button.css");
+@import url("font.css");
+@import url("grid.css");
+* {
+	margin: 0;
+	padding: 0;
+}
+html, body {
+	height: 100%;
+	background-color: #fff;
+	color: #000;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+.container {
+	background-color: #fff;
+	box-shadow: 0px 0px 10px 0px #000;
+}
+.top-margin {
+	clear: both;
+	height: 10px;
+}
+.bottom-margin {
+	clear: both;
+	height: 10px;
+}
+/* Header,Footer */
+.header, .footer {
+	background-color: #000;
+	font-size: 12px;
+}
+.header-bar{
+		padding-top:10px;
+	padding-bottom:10px;
+	color:#fff;
+}
+.footer {
+	text-align: center;
+}
+.footer-bar{
+	padding-top:10px;
+	padding-bottom:10px;
+	color:#fff;
+	text-align:center;
+}
+.logout{
+	text-align:right;
+}
+/* End Header,Footer */
+/* Menu */
+.menu-bar {
+	float: left;
+	width: 100%;
+}
+.menu-bar ul {
+	float: left;
+}
+.menu-bar .top-menu ul li {
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	list-style: none outside none;
+	padding: 0 20px;
+	border-radius: 3px 3px 0 0;
+}
+.menu-bar .top-menu ul li.sel {
+}
+.menu-bar ul li a {
+	text-decoration: none;
+	color: #000;
+}
+.menu-bar .top-menu ul li ul {
+	display: block;
+	list-style: none outside none;
+	padding: 0px 50px;
+}
+.menu-bar .top-menu, .menu-bar .sub-menu {
+	clear: both;
+	float: left;
+}
+.menu-bar .sub-menu {
+	width: 100%;
+}
+.menu-bar .sub-menu ul li {
+	list-style: none;
+	padding: 12px 20px 12px 0px;
+	float: left;
+}
+/* End Menu */
+
+/* Page Title Bar */
+.page-title-bar {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border: solid 1px #E5E5E5;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	margin-left: 9px;
+	margin-right: 9px;
+}
+.page-title-bar .title {
+}
+/* End Page Title Bar */
+.grid_overlay {
+	height: 1000px;
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+.grid_overlay .cell {
+	background-color: Red;
+	opacity: 0.1;
+	height: 2000px;
+}

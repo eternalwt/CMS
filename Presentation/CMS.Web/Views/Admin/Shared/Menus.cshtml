@@ -1,0 +1,23 @@
+﻿@model List<CMS.Web.FrameWork.Models.MenuModel>
+@using CMS.Web.FrameWork.Helpers
+@foreach (var menu in Model) {
+	<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">@menu.Title<b class="caret"></b></a>
+		@if (menu.Childs.Count() > 0) {
+			<ul class="dropdown-menu">
+				@foreach (var child in menu.Childs) {
+					<li>
+						@if (string.IsNullOrEmpty(child.Url) == false) {
+							@Html.Anchor(child.Title, child.Url)   
+	  }
+	  else {
+							<a href="#">@child.Title</a>
+	  }
+						@if (child.Childs.Count > 0) {
+		  Html.RenderPartial("Menus", child.Childs);
+	  }
+					</li>
+	}
+			</ul>
+  }
+	</li>
+}

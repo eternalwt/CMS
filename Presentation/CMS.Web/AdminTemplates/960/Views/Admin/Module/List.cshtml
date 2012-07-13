@@ -1,0 +1,11 @@
+﻿@using CMS.Data.Service.Helpers;
+@using CMS.Data.Service.Models;
+@using CMS.Web.FrameWork.Helpers;
+@model PagedList<ModuleInfo>
+@{
+	GridViewResult<ModuleInfo> gridViewResult = new GridViewResult<ModuleInfo>();
+	gridViewResult.rows = Model;
+	gridViewResult.total = Model.TotalCount;
+	gridViewResult.totalpages = Model.TotalPages;
+	Response.Write(JsonHelper.JsonSerializer<GridViewResult<ModuleInfo>>(gridViewResult));
+}

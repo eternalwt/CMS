@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FF58779A-4740-41D0-8861-8BDE7CE14997}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMS.Data</RootNamespace>
+    <AssemblyName>CMS.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Presentation\CMS.Web\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Presentation\CMS.Web\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\Presentation\CMS.Web\_bin_deployableAssemblies\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseDataProviderManager.cs" />
+    <Compile Include="BaseEfDataProvider.cs" />
+    <Compile Include="BaseEntity.cs" />
+    <Compile Include="CacheExtensions.cs" />
+    <Compile Include="ConfigUtil.cs" />
+    <Compile Include="CreateTablesIfNotExist.cs" />
+    <Compile Include="DataSettings.cs" />
+    <Compile Include="DataSettingsHelper.cs" />
+    <Compile Include="DataSettingsManager.cs" />
+    <Compile Include="EfDataProviderManager.cs" />
+    <Compile Include="Helpers\DateRangeAttribute.cs" />
+    <Compile Include="ICacheManager.cs" />
+    <Compile Include="IDataMap.cs" />
+    <Compile Include="IDataProvider.cs" />
+    <Compile Include="IDbContext.cs" />
+    <Compile Include="IEfDataProvider.cs" />
+    <Compile Include="Map\Menu\MenuMap.cs" />
+    <Compile Include="Map\Menu\MenusInRolesMap.cs" />
+    <Compile Include="Map\Menu\MenuTypeMap.cs" />
+    <Compile Include="Map\Module\ModulesInMenusMap.cs" />
+    <Compile Include="Map\Module\ModulesInRolesMap.cs" />
+    <Compile Include="Map\Module\PositionMap.cs" />
+    <Compile Include="Map\Module\ModuleTypeMap.cs" />
+    <Compile Include="Map\Template\TemplateMap.cs" />
+    <Compile Include="Map\User\UserMap.cs" />
+    <Compile Include="Model\AccessLevel\AccessLevel.cs" />
+    <Compile Include="Model\Article\Article.cs" />
+    <Compile Include="Model\Category\Category.cs" />
+    <Compile Include="InstallDefaultData.cs" />
+    <Compile Include="Model\Menu\MenuType.cs" />
+    <Compile Include="Model\Menu\Menu.cs" />
+    <Compile Include="Model\Menu\MenusInRoles.cs" />
+    <Compile Include="Model\Module\ModulesInMenus.cs" />
+    <Compile Include="Model\Module\ModulesInRoles.cs" />
+    <Compile Include="Model\Module\Position.cs" />
+    <Compile Include="Model\Module\Module.cs" />
+    <Compile Include="Map\Module\ModuleMap.cs" />
+    <Compile Include="CMSContext.cs" />
+    <Compile Include="Model\Module\ModuleType.cs" />
+    <Compile Include="MemoryCacheManager.cs" />
+    <Compile Include="Model\Role\Role.cs" />
+    <Compile Include="Model\Section\Section.cs" />
+    <Compile Include="Model\Template\Template.cs" />
+    <Compile Include="Model\User\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlCeDataProvider.cs" />
+    <Compile Include="SqlServerDataProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
