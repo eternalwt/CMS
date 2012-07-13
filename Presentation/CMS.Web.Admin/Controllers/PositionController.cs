@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CMS.Data.Service.Positions;
-using CMS.Data.Service.Models;
+using CMS.Data.Service.Details;
 using CMS.Web.Admin.Models;
 using CMS.Web.Admin.Helpers;
 
@@ -28,7 +28,7 @@ namespace CMS.Web.Admin.Controllers {
 
 		[HttpGet]
 		public JsonResult Search(string term) {
-			List<PositionModel> positions=_positionRepository.GetPositions(term,1,GlobalConst.AutoCompletePageSize,"PositionName","asc");
+			List<PositionDetail> positions=_positionRepository.GetPositions(term,1,GlobalConst.AutoCompletePageSize,"PositionName","asc");
 			return Json((from pos in positions
 						 select new AutoCompleteListModel {
 							 id=pos.PositionID,

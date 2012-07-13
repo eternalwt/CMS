@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using CMS.Web.FrameWork.Helpers;
-using CMS.Data.Service.Models;
+using CMS.Data.Service.Details;
 using CMS.Web.FrameWork.Models;
 using CMS.Data.Service.Helpers;
  
@@ -12,7 +12,7 @@ using CMS.Data.Service.Helpers;
 namespace CMS.Data.Service.Modules {
 	public interface IModuleRepository {
 
-		PagedList<ModuleModel> GetModules(string moduleName, int? moduleTypeID, int? positionID, int? accessLevelID, bool? isPublished, int pageIndex, int pageSize, string sortName, string sortOrder);
+		PagedList<ModuleDetail> GetModules(string moduleName, int? moduleTypeID, int? positionID, int? accessLevelID, bool? isPublished, int pageIndex, int pageSize, string sortName, string sortOrder);
 		IEnumerable<ErrorInfo> SaveModule(Module module);
 		Module FindModule(int moduleID);
 
@@ -24,8 +24,8 @@ namespace CMS.Data.Service.Modules {
 		bool DeleteModuleMenus(int moduleID);
 		IEnumerable<ErrorInfo> SaveModuleMenus(List<ModulesInMenus> moduleMenus);
 
-		List<PositionModel> GetPositions();
-		List<AccessLevelModel> GetAccessLevels();
+		List<PositionDetail> GetPositions();
+		List<AccessLevelDetail> GetAccessLevels();
 
 	}
 }

@@ -98,7 +98,7 @@
 					@{
 		 List<SelectListItem> accessLevels=null;
 		 if(ViewData["AccessLevels"]!=null) {
-			 List<CMS.Data.Service.Models.AccessLevelInfo> accessLevelList=(List<CMS.Data.Service.Models.AccessLevelInfo>)ViewData["AccessLevels"];
+			 List<CMS.Data.Service.Details.AccessLevelDetail> accessLevelList=(List<CMS.Data.Service.Details.AccessLevelDetail>)ViewData["AccessLevels"];
 			 accessLevels=(from access in accessLevelList
 						   select new SelectListItem {
 							   Text=access.AccessLevelName,

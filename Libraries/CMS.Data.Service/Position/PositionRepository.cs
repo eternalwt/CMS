@@ -5,13 +5,13 @@ using System.Text;
 using CMS.Data.Service.Helpers;
 using System.Data;
 using CMS.Web.FrameWork.Helpers;
-using CMS.Data.Service.Models;
+using CMS.Data.Service.Details;
 using CMS.Web.FrameWork.Models;
 
 namespace CMS.Data.Service.Positions {
 	public partial class PositionRepository:IPositionRepository {
 
-		public PagedList<PositionModel> GetPositions(string positionName,
+		public PagedList<PositionDetail> GetPositions(string positionName,
 											int pageIndex,
 											int pageSize,
 											string sortName,
@@ -22,12 +22,12 @@ namespace CMS.Data.Service.Positions {
 					query=query.Where(position => position.PositionName.StartsWith(positionName));
 				}
 				query=query.OrderBy(sortName,(sortOrder=="asc"));
-				IQueryable<PositionModel> positions=(from position in query
-													select new PositionModel {
+				IQueryable<PositionDetail> positions=(from position in query
+													select new PositionDetail {
 														PositionID=position.PositionID,
 														PositionName=position.PositionName,
 													});
-				return new PagedList<PositionModel>(positions,pageIndex,pageSize);
+				return new PagedList<PositionDetail>(positions,pageIndex,pageSize);
 			}
 		}
 

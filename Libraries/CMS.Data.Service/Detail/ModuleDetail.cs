@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CMS.Data.Service.Models {
-	public class ModuleModel {
+namespace CMS.Data.Service.Details {
+	public class ModuleDetail {
 
 		public int ModuleID { get; set; }
 

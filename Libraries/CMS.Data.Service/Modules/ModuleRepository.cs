@@ -5,13 +5,13 @@ using System.Text;
 using CMS.Data.Service.Helpers;
 using System.Data;
 using CMS.Web.FrameWork.Helpers;
-using CMS.Data.Service.Models;
+using CMS.Data.Service.Details;
 using CMS.Web.FrameWork.Models;
 
 namespace CMS.Data.Service.Modules {
 	public partial class ModuleRepository : IModuleRepository {
 
-		public PagedList<ModuleModel> GetModules(string moduleName,
+		public PagedList<ModuleDetail> GetModules(string moduleName,
 											int? moduleTypeID,
 											int? positionID,
 											int? accessLevelID,
@@ -38,8 +38,8 @@ namespace CMS.Data.Service.Modules {
 					query = query.Where(m => m.IsPublish == isPublish);
 				}
 				query = query.OrderBy(sortName, (sortOrder == "asc"));
-				IQueryable<ModuleModel> modules = (from module in query
-												  select new ModuleModel {
+				IQueryable<ModuleDetail> modules = (from module in query
+												  select new ModuleDetail {
 													  ModuleID = module.ModuleID,
 													  ModuleName = module.ModuleName,
 													  IsPublish = module.IsPublish,
@@ -48,7 +48,7 @@ namespace CMS.Data.Service.Modules {
 													  ModuleTypeName = module.ModuleType.ModuleTypeName,
 													  PositionName = module.Position.PositionName
 												  });
-				return new PagedList<ModuleModel>(modules, pageIndex, pageSize);
+				return new PagedList<ModuleDetail>(modules, pageIndex, pageSize);
 			}
 		}
 
@@ -139,26 +139,28 @@ namespace CMS.Data.Service.Modules {
 		}
 
 
-		public List<PositionModel> GetPositions() {
+		public List<PositionDetail> GetPositions() {
 			using (CMSContext context = new CMSContext()) {
 				return (from position in context.Positions
 						orderby position.PositionName
-						select new PositionModel {
+						select new PositionDetail {
 							 PositionID = position.PositionID,
 							  PositionName = position.PositionName
 						}).ToList();
 			}
 		}
 
-		public List<AccessLevelModel> GetAccessLevels() {
+		public List<AccessLevelDetail> GetAccessLevels() {
 			using (CMSContext context = new CMSContext()) {
 				return (from accessLevel in context.AccessLevels
 						orderby accessLevel.AccessLevelName
-						select new AccessLevelModel {
+						select new AccessLevelDetail {
 							 AccessLevelID = accessLevel.AccessLevelID,
 							 AccessLevelName = accessLevel.AccessLevelName
 						}).ToList();
 			}
 		}
+
+	 
 	}
 }

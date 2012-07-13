@@ -8,7 +8,7 @@ using CMS.Web.FrameWork.Helpers;
 using CMS.Data.Service.Modules;
 using CMS.Data;
 using CMS.Web.FrameWork.Models;
-using CMS.Data.Service.Models;
+using CMS.Data.Service.Details;
 using CMS.Data.Service.Helpers;
 
 namespace CMS.Web.Admin.Controllers {
@@ -104,7 +104,7 @@ namespace CMS.Web.Admin.Controllers {
 			this.TryUpdateModel(pagingModel);
 			if (string.IsNullOrEmpty(pagingModel.sortname))
 				pagingModel.sortname = "ModuleName";
-			PagedList<ModuleModel> modules = _moduleRepository.GetModules(model.ModuleName,
+			PagedList<ModuleDetail> modules = _moduleRepository.GetModules(model.ModuleName,
 				model.ModuleTypeID,
 				model.PositionID,
 				model.AccessLevelID,

@@ -1,11 +1,11 @@
 ﻿@using CMS.Data.Service.Helpers;
-@using CMS.Data.Service.Models;
+@using CMS.Data.Service.Details;
 @using CMS.Web.FrameWork.Helpers;
-@model PagedList<ModuleInfo>
+@model PagedList<ModuleDetail>
 @{
-	GridViewResult<ModuleInfo> gridViewResult = new GridViewResult<ModuleInfo>();
+	GridViewResult<ModuleDetail> gridViewResult = new GridViewResult<ModuleDetail>();
 	gridViewResult.rows = Model;
 	gridViewResult.total = Model.TotalCount;
 	gridViewResult.totalpages = Model.TotalPages;
-	Response.Write(JsonHelper.JsonSerializer<GridViewResult<ModuleInfo>>(gridViewResult));
+	Response.Write(JsonHelper.JsonSerializer<GridViewResult<ModuleDetail>>(gridViewResult));
 }

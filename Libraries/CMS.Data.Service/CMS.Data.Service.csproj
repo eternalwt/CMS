@@ -47,9 +47,9 @@
     <Compile Include="Helpers\IPagedList.cs" />
     <Compile Include="Helpers\PagedList.cs" />
     <Compile Include="Helpers\QueryableExtension.cs" />
-    <Compile Include="Models\AccessLevelInfo.cs" />
-    <Compile Include="Models\PositionInfo.cs" />
-    <Compile Include="Models\ModuleInfo.cs" />
+    <Compile Include="Detail\AccessLevelDetail.cs" />
+    <Compile Include="Detail\PositionDetail.cs" />
+    <Compile Include="Detail\ModuleDetail.cs" />
     <Compile Include="Modules\IModuleRepository.cs" />
     <Compile Include="Modules\ModuleRepository.cs" />
     <Compile Include="Position\IPositionRepository.cs" />
