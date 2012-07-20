@@ -65,6 +65,7 @@
     <Compile Include="DataSettingsHelper.cs" />
     <Compile Include="DataSettingsManager.cs" />
     <Compile Include="EfDataProviderManager.cs" />
+    <Compile Include="Enums\AccessLevel.cs" />
     <Compile Include="Helpers\DateRangeAttribute.cs" />
     <Compile Include="ICacheManager.cs" />
     <Compile Include="IDataMap.cs" />
@@ -80,7 +81,7 @@
     <Compile Include="Map\Module\ModuleTypeMap.cs" />
     <Compile Include="Map\Template\TemplateMap.cs" />
     <Compile Include="Map\User\UserMap.cs" />
-    <Compile Include="Model\AccessLevel\AccessLevel.cs" />
+    <Compile Include="Model\AccessLevel\AccessLevelEnum.cs" />
     <Compile Include="Model\Article\Article.cs" />
     <Compile Include="Model\Category\Category.cs" />
     <Compile Include="InstallDefaultData.cs" />

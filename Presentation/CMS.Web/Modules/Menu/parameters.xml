@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <group name="Basic">
+    <fields>
+      <field type="select"  name="showSubMenu" default="0">
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+      </field>
+    </fields>
+  </group>
+</config>

@@ -65,6 +65,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\ModuleController.cs" />
+    <Compile Include="Controllers\ModuleTypeController.cs" />
     <Compile Include="Controllers\PositionController.cs" />
     <Compile Include="Helpers\GlobalConst.cs" />
     <Compile Include="Models\AutoCompleteListModel.cs" />

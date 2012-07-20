@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5C3EC566-3246-49E9-9522-24C072BB4E07}</ProjectGuid>
+    <ProjectGuid>{BB75EB4D-F18A-4F19-A28F-B01931201B21}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CMS.Data.Service</RootNamespace>
-    <AssemblyName>CMS.Data.Service</AssemblyName>
+    <RootNamespace>CMS.Web.Modules.Menu</RootNamespace>
+    <AssemblyName>CMS.Web.Modules.Menu</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\Presentation\CMS.Web\bin\</OutputPath>
+    <OutputPath>..\..\Presentation\CMS.Web\Modules\Menu\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -25,58 +25,27 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\Presentation\CMS.Web\bin\</OutputPath>
+    <OutputPath>..\..\Presentation\CMS.Web\Modules\Menu\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Details\AccessLevelDetail.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Details\ModuleDetail.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Details\ModuleTypeDetail.cs" />
-    <Compile Include="Details\PositionDetail.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Helpers\IPagedList.cs" />
-    <Compile Include="Helpers\PagedList.cs" />
-    <Compile Include="Helpers\QueryableExtension.cs" />
-    <Compile Include="Modules\IModuleRepository.cs" />
-    <Compile Include="Modules\ModuleRepository.cs" />
-    <Compile Include="ModuleTypes\IModuleTypeRepository.cs" />
-    <Compile Include="ModuleTypes\ModuleTypeRepository.cs" />
-    <Compile Include="Position\IPositionRepository.cs" />
-    <Compile Include="Position\PositionRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Presentation\CMS.Web.FrameWork\CMS.Web.FrameWork.csproj">
-      <Project>{52D8D195-396C-4C69-B9AE-9120878A9000}</Project>
-      <Name>CMS.Web.FrameWork</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CMS.Data\CMS.Data.csproj">
-      <Project>{FF58779A-4740-41D0-8861-8BDE7CE14997}</Project>
-      <Name>CMS.Data</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AccessLevels\" />
+    <Content Include="parameters.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

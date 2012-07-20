@@ -6,8 +6,7 @@ using CMS.Web.FrameWork.Helpers;
 using CMS.Data.Service.Details;
 using CMS.Web.FrameWork.Models;
 using CMS.Data.Service.Helpers;
- 
- 
+using CMS.Data.Service.Details;
 
 namespace CMS.Data.Service.Modules {
 	public interface IModuleRepository {
@@ -24,8 +23,7 @@ namespace CMS.Data.Service.Modules {
 		bool DeleteModuleMenus(int moduleID);
 		IEnumerable<ErrorInfo> SaveModuleMenus(List<ModulesInMenus> moduleMenus);
 
-		List<PositionDetail> GetPositions();
 		List<AccessLevelDetail> GetAccessLevels();
-
+        List<PositionDetail> GetPositions();
 	}
 }

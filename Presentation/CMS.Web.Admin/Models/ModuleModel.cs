@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using CMS.Data;
 using CMS.Data.Config;
 using CMS.Data.Helpers;
+using CMS.Data.Service.Details;
 
 namespace CMS.Web.Admin.Models {
 
@@ -20,6 +21,8 @@ namespace CMS.Web.Admin.Models {
 		[Required(ErrorMessage="Module type is required")]
 		[Range(ConfigUtil.IDStartRange,int.MaxValue,ErrorMessage="Module type is required")]
 		public int ModuleTypeID { get; set; }
+
+		public string ModuleTypeName { get; set; }
 
 		[Required(ErrorMessage="Position is required")]
 		[Range(ConfigUtil.IDStartRange,int.MaxValue,ErrorMessage="Position is required")]
@@ -52,5 +55,9 @@ namespace CMS.Web.Admin.Models {
 
 		public string MenuIDs { get; set; }
 
+
+        public List<PositionDetail> Positions { get; set; }
+
+        public List<AccessLevelDetail> AccessLevels { get; set; }
 	}
 }

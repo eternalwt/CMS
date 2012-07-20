@@ -9,6 +9,7 @@ namespace CMS.Data {
 
 		protected override void Seed(CMSContext context) {
 			context.ModuleTypes.Add(new ModuleType { ModuleTypeName = "Menu" });
+			context.ModuleTypes.Add(new ModuleType { ModuleTypeName = "Login" });
 			context.Positions.Add(new Position { PositionName = "Top" });
 			context.Positions.Add(new Position { PositionName = "Left" });
 			context.Positions.Add(new Position { PositionName = "Bottom" });
@@ -17,8 +18,6 @@ namespace CMS.Data {
 			context.Positions.Add(new Position { PositionName = "Footer" });
 			context.AccessLevels.Add(new AccessLevel { AccessLevelName = "Public" });
 			context.AccessLevels.Add(new AccessLevel { AccessLevelName = "Register" });
-			context.ModuleTypes.Add(new ModuleType { ModuleTypeName = "Menu" });
-			context.ModuleTypes.Add(new ModuleType { ModuleTypeName = "Login" });
 		}
 	}
 }

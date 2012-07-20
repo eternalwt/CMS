@@ -143,6 +143,9 @@
     <Content Include="Assets\js\jquery.ui.autocomplete.js" />
     <Content Include="Assets\js\module-extend.js" />
     <Content Include="Assets\js\common\module.js" />
+    <Content Include="Modules\Menu\CMS.Web.Modules.Menu.dll" />
+    <Content Include="Modules\Menu\CMS.Web.Modules.Menu.pdb" />
+    <Content Include="Modules\Menu\parameters.xml" />
     <Content Include="Views\Admin\Home\Index.cshtml" />
     <Content Include="Views\Admin\Menu\Index.cshtml">
       <SubType>Code</SubType>
@@ -251,6 +254,7 @@
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

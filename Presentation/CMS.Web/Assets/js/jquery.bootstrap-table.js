@@ -204,9 +204,9 @@
 			}
 		});
 	};
-	$.fn.bootstrapTableReload=function (p) {
+	$.fn.bootstrapTableReload=function () {
 		return this.each(function () {
-			if(this.grid&&this.p.url) {
+			if(this.grid) {
 				this.grid.populate();
 			}
 		});
