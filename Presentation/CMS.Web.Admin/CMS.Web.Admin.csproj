@@ -38,6 +38,7 @@
       <HintPath>..\..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -62,6 +63,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\ModuleController.cs" />
@@ -69,8 +71,11 @@
     <Compile Include="Controllers\PositionController.cs" />
     <Compile Include="Helpers\GlobalConst.cs" />
     <Compile Include="Models\AutoCompleteListModel.cs" />
+    <Compile Include="Models\DirectoryModal.cs" />
+    <Compile Include="Models\FileModel.cs" />
     <Compile Include="Models\MenuModel.cs" />
     <Compile Include="Models\ModuleModel.cs" />
+    <Compile Include="Models\ParamterFileModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

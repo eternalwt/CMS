@@ -1,12 +1,27 @@
-﻿@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+﻿/*
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+*/
 body {
 	padding-top: 50px;
 }
 body, p, input, button, select, textarea, .navbar-search .search-query {
 	font-family: 'Open Sans' , sans-serif, Helvetica, Arial;
 }
+.ui-dialog .footer {
+	margin-bottom: 15px;
+}
+.ui-dialog .footer .btn {
+	margin-left: 15px;
+}
+.navbar-fixed-top, .navbar-fixed-bottom {
+	z-index: 900;
+}
 .page-header .tool-bar .btn {
 	margin-left: 10px;
+}
+.page-header.edit {
+	margin-top: 0px;
+	padding-bottom: 10px;
 }
 .pagination.rocord-status {
 	padding-top: 10px;
@@ -32,18 +47,73 @@ body, p, input, button, select, textarea, .navbar-search .search-query {
 	margin-left: 5px;
 }
 /* dropdown search */
-.dropdown-menu.dropdown-search{
+.dropdown-menu.dropdown-search {
 	border: 0 none;
-    border-radius: 0 0 0 0;
-    box-shadow: none;
-    margin: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    padding-top: 0;
+	border-radius: 0 0 0 0;
+	box-shadow: none;
+	margin: 0;
+	padding-bottom: 0;
+	padding-left: 0;
+	padding-top: 0;
 }
-.dropdown-search .icon-search{
+.dropdown-search .icon-search {
 	position: absolute;
-    right: 5px;
-    top: 7px;
+	right: 5px;
+	top: 7px;
 }
 /* end dropdown search */
+/* filemanager thumbnail */
+.file-manager .thumbnail {
+	text-align: center;
+	min-height: 185px;
+}
+.file-manager .thumbnail .file-thumb {
+	height: 130px;
+	overflow: hidden;
+}
+.file-manager .thumbnail .caption {
+	padding: 10px 0;
+	margin: 0;
+}
+.file-manager .thumbnail .caption p {
+	padding: 0;
+	margin: 0;
+}
+.file-manager .header {
+	margin-bottom: 10px;
+}
+.file-manager .header .btn {
+	margin-right: 10px;
+}
+.file-manager .files-list {
+	height: 600px;
+	overflow: auto;
+	overflow-x: hidden;
+}
+.file-manager .span3 {
+    width: 210px;
+}
+.file-manager .loading{
+	    background-color: #FFFE00;
+    border: 1px solid #D0C2C2;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 5px 0;
+    text-align: center;
+    width: 100px;
+}
+.file-manager #AddFiles{
+   border: 1px dashed #6A5050;
+    height: 500px;  
+}
+.file-manager #AddFiles .form-horizontal{
+      margin: 0 auto;
+    padding-top: 238px;
+    width: 250px;
+}
+.file-manager #AddFiles  .form-horizontal .controls {	
+	margin-left: 0px;
+}
+/* end filemanager thumbnail */

@@ -7,57 +7,77 @@ using CMS.Data;
 using CMS.Data.Config;
 using CMS.Data.Helpers;
 using CMS.Data.Service.Details;
+using CMS.Web.FrameWork.Helpers;
 
-namespace CMS.Web.Admin.Models {
+namespace CMS.Web.Admin.Models
+{
 
-	public class ModuleModel {
+    public class ModuleModel
+    {
 
-		public int ModuleID { get; set; }
+        public int ModuleID { get; set; }
 
-		[Required(ErrorMessage="Module name is required")]
-		[StringLength(50,ErrorMessage="Module name must be under 50 characters")]
-		public string ModuleName { get; set; }
+        [Required(ErrorMessage = "Module name is required")]
+        [StringLength(50, ErrorMessage = "Module name must be under 50 characters")]
+        public string ModuleName { get; set; }
 
-		[Required(ErrorMessage="Module type is required")]
-		[Range(ConfigUtil.IDStartRange,int.MaxValue,ErrorMessage="Module type is required")]
-		public int ModuleTypeID { get; set; }
+        [Required(ErrorMessage = "Module type is required")]
+        [Range(ConfigUtil.IDStartRange, int.MaxValue, ErrorMessage = "Module type is required")]
+        public int ModuleTypeID { get; set; }
 
-		public string ModuleTypeName { get; set; }
+        public string ModuleTypeName { get; set; }
 
-		[Required(ErrorMessage="Position is required")]
-		[Range(ConfigUtil.IDStartRange,int.MaxValue,ErrorMessage="Position is required")]
-		public int PositionID { get; set; }
+        [Required(ErrorMessage = "Position is required")]
+        [Range(ConfigUtil.IDStartRange, int.MaxValue, ErrorMessage = "Position is required")]
+        public int PositionID { get; set; }
 
-		public string PositionName { get; set; }
+        public string PositionName { get; set; }
 
-		[Required(ErrorMessage="IsPublish is required")]
-		public bool IsPublish { get; set; }
+        [Required(ErrorMessage = "IsPublish is required")]
+        public bool IsPublish { get; set; }
 
-		[DateRange(ErrorMessage="Invalid PublishUp Date")]
-		public DateTime? PublishUp { get; set; }
+        [DateRange(ErrorMessage = "Invalid PublishUp Date")]
+        public DateTime? PublishUp { get; set; }
 
-		[DateRange(ErrorMessage="Invalid PublishDown Date")]
-		public DateTime? PublishDown { get; set; }
+        public string PublishUpFormat
+        {
+            get
+            {
+                return (this.PublishUp.HasValue ? this.PublishUp.Value.ToString("MM/dd/yyyy") : string.Empty);
+            }
+        }
 
-		[Required(ErrorMessage="Sort order is required")]
-		[Range(ConfigUtil.IDStartRange,int.MaxValue,ErrorMessage="Sort order is required")]
-		public int SortOrder { get; set; }
+        [DateRange(ErrorMessage = "Invalid PublishDown Date")]
+        public DateTime? PublishDown { get; set; }
 
-		public IDictionary<string,string> Parameters { get; set; }
+        public string PublishDownFormat
+        {
+            get
+            {
+                return (this.PublishDown.HasValue ? this.PublishDown.Value.ToString("MM/dd/yyyy") : string.Empty);
+            }
+        }
 
-		[Required(ErrorMessage="Access level is required")]
-		[Range(ConfigUtil.IDStartRange,int.MaxValue,ErrorMessage="Access level is required")]
-		public int AccessLevelID { get; set; }
+        [Required(ErrorMessage = "Sort order is required")]
+        [Range(ConfigUtil.IDStartRange, int.MaxValue, ErrorMessage = "Sort order is required")]
+        public int SortOrder { get; set; }
 
-		public string AccessLevelName { get; set; }
+        [Required(ErrorMessage = "Access level is required")]
+        [Range(ConfigUtil.IDStartRange, int.MaxValue, ErrorMessage = "Access level is required")]
+        public int AccessLevelID { get; set; }
 
-		public string RoleIDs { get; set; }
+        public string AccessLevelName { get; set; }
 
-		public string MenuIDs { get; set; }
-
+        public List<int> ModulesInRoles { get; set; }
 
         public List<PositionDetail> Positions { get; set; }
 
         public List<AccessLevelDetail> AccessLevels { get; set; }
-	}
+
+        public List<RoleDetail> Roles { get; set; }
+
+        public List<ModuleTypeDetail> ModuleTypes { get; set; }
+
+        public Parameter Parameter { get; set; }
+    }
 }

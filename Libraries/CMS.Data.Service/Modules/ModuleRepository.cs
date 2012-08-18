@@ -92,6 +92,7 @@ namespace CMS.Data.Service.Modules
                     .Include("Position")
                     .Include("AccessLevel")
                     .Include("ModuleType")
+                    .Include("ModulesInRoles")
                     .Where(m => m.ModuleID == moduleID).FirstOrDefault();
             }
         }
@@ -108,25 +109,25 @@ namespace CMS.Data.Service.Modules
         {
             using (CMSContext context = new CMSContext())
             {
-                List<ModulesInRoles> moduleRoles = context.ModulesInRoles.Where(moduleRole => moduleRole.ModuleID == moduleID).ToList();
-                foreach (var moduleRole in moduleRoles)
+                List<ModulesInRoles> ModuleRoles = context.ModulesInRoles.Where(moduleposition => moduleposition.ModuleID == moduleID).ToList();
+                foreach (var moduleposition in ModuleRoles)
                 {
-                    context.ModulesInRoles.Remove(moduleRole);
+                    context.ModulesInRoles.Remove(moduleposition);
                 }
                 return context.SaveChanges() > 0;
             }
         }
 
-        public IEnumerable<ErrorInfo> SaveModuleRoles(List<ModulesInRoles> moduleRoles)
+        public IEnumerable<ErrorInfo> SaveModuleRoles(List<ModulesInRoles> ModuleRoles)
         {
             using (CMSContext context = new CMSContext())
             {
                 List<ErrorInfo> errors = new List<ErrorInfo>();
-                foreach (var moduleRole in moduleRoles)
+                foreach (var moduleposition in ModuleRoles)
                 {
-                    errors.AddRange(ValidationHelper.Validate(moduleRole));
+                    errors.AddRange(ValidationHelper.Validate(moduleposition));
                     if (errors.Any() == false)
-                        context.ModulesInRoles.Add(moduleRole);
+                        context.ModulesInRoles.Add(moduleposition);
                 }
                 if (errors.Any() == false)
                     context.SaveChanges();
@@ -186,18 +187,16 @@ namespace CMS.Data.Service.Modules
             }
         }
 
-
-
         public List<PositionDetail> GetPositions()
         {
             using (CMSContext context = new CMSContext())
             {
-                return (from position in context.Positions
-                        orderby position.PositionName
+                return (from position in context.Positions 
+                        orderby position.PositionName 
                         select new PositionDetail
                         {
                             PositionID = position.PositionID,
-                            PositionName = position.PositionName
+                            PositionName = position.PositionName 
                         }).ToList();
             }
         }

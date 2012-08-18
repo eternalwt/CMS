@@ -75,7 +75,13 @@
     <Content Include="Assets\css\bootstrap-dialog.css" />
     <Content Include="Assets\css\bootstrap-responsive.css" />
     <Content Include="Assets\css\bootstrap.css" />
+    <Content Include="Assets\css\chosen.css" />
     <Content Include="Assets\css\docs.css" />
+    <Content Include="Assets\css\jquery-ui-1.8.16.custom.css" />
+    <Content Include="Assets\css\jquery.contextMenu.css" />
+    <Content Include="Assets\css\jquery.lightbox-0.5.css" />
+    <Content Include="Assets\css\jquery.treeview.css" />
+    <Content Include="Assets\css\jquery.ui.1.8.16.ie.css" />
     <Content Include="Assets\css\jquery.ui.autocomplete.css" />
     <Content Include="Assets\css\jquery.ui.datepicker.css" />
     <Content Include="Assets\css\site-admin.css" />
@@ -84,37 +90,25 @@
     <Content Include="Assets\ico\apple-touch-icon-57-precomposed.png" />
     <Content Include="Assets\ico\apple-touch-icon-72-precomposed.png" />
     <Content Include="Assets\ico\favicon.ico" />
-    <Content Include="Assets\img\bird.png" />
-    <Content Include="Assets\img\bootstrap-mdo-sfmoma-01.jpg" />
-    <Content Include="Assets\img\bootstrap-mdo-sfmoma-02.jpg" />
-    <Content Include="Assets\img\bootstrap-mdo-sfmoma-03.jpg" />
-    <Content Include="Assets\img\browsers.png" />
-    <Content Include="Assets\img\example-sites\fleetio.png" />
-    <Content Include="Assets\img\example-sites\jshint.png" />
-    <Content Include="Assets\img\example-sites\kippt.png" />
-    <Content Include="Assets\img\example-sites\soundready.png" />
-    <Content Include="Assets\img\examples\bootstrap-example-fluid.jpg" />
-    <Content Include="Assets\img\examples\bootstrap-example-hero.jpg" />
-    <Content Include="Assets\img\examples\bootstrap-example-starter.jpg" />
-    <Content Include="Assets\img\github-16px.png" />
+    <Content Include="Assets\img\chosen-sprite.png" />
     <Content Include="Assets\img\glyphicons-halflings-white.png" />
     <Content Include="Assets\img\glyphicons-halflings.png" />
-    <Content Include="Assets\img\glyphicons\glyphicons_009_magic.png" />
-    <Content Include="Assets\img\glyphicons\glyphicons_042_group.png" />
-    <Content Include="Assets\img\glyphicons\glyphicons_079_podium.png" />
-    <Content Include="Assets\img\glyphicons\glyphicons_082_roundabout.png" />
-    <Content Include="Assets\img\glyphicons\glyphicons_155_show_thumbnails.png" />
-    <Content Include="Assets\img\glyphicons\glyphicons_163_iphone.png" />
-    <Content Include="Assets\img\glyphicons\glyphicons_214_resize_small.png" />
-    <Content Include="Assets\img\glyphicons\glyphicons_266_book_open.png" />
     <Content Include="Assets\img\grid-18px-masked.png" />
-    <Content Include="Assets\img\icon-css3.png" />
-    <Content Include="Assets\img\icon-github.png" />
-    <Content Include="Assets\img\icon-html5.png" />
-    <Content Include="Assets\img\icon-twitter.png" />
-    <Content Include="Assets\img\less-logo-large.png" />
-    <Content Include="Assets\img\less-small.png" />
     <Content Include="Assets\img\responsive-illustrations.png" />
+    <Content Include="Assets\img\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Assets\img\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Assets\img\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Assets\img\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Assets\img\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Assets\img\ui-bg_glass_75_ffffff_1x400.png" />
+    <Content Include="Assets\img\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Assets\img\ui-bg_inset-soft_95_fef1ec_1x100.png" />
+    <Content Include="Assets\img\ui-icons_222222_256x240.png" />
+    <Content Include="Assets\img\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Assets\img\ui-icons_454545_256x240.png" />
+    <Content Include="Assets\img\ui-icons_888888_256x240.png" />
+    <Content Include="Assets\img\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Assets\img\ui-icons_f6cf3b_256x240.png" />
     <Content Include="Assets\js\application.js" />
     <Content Include="Assets\js\bootstrap-alert.js" />
     <Content Include="Assets\js\bootstrap-button.js" />
@@ -132,6 +126,16 @@
     <Content Include="Assets\js\bootstrap-typeahead.js" />
     <Content Include="Assets\js\bootstrap.js" />
     <Content Include="Assets\js\bootstrap.min.js" />
+    <Content Include="Assets\js\chosen.jquery.min.js" />
+    <Content Include="Assets\js\chosen.proto.min.js" />
+    <Content Include="Assets\js\filemanager.js" />
+    <Content Include="Assets\js\jquery-ui-autoselect.js" />
+    <Content Include="Assets\js\jquery.contextMenu.js" />
+    <Content Include="Assets\js\jquery.filedrop.js" />
+    <Content Include="Assets\js\jquery.lightbox-0.5.js" />
+    <Content Include="Assets\js\jquery.lightbox-0.5.min.js" />
+    <Content Include="Assets\js\jquery.treeview.js" />
+    <Content Include="Assets\js\module.js" />
     <Content Include="Assets\js\google-code-prettify\prettify.css" />
     <Content Include="Assets\js\google-code-prettify\prettify.js" />
     <Content Include="Assets\js\jHelper.js" />
@@ -140,12 +144,13 @@
     <Content Include="Assets\js\jquery-ui-1.8.21.custom.min.js" />
     <Content Include="Assets\js\jquery.bootstrap-table.js" />
     <Content Include="Assets\js\jquery.tmpl.min.js" />
-    <Content Include="Assets\js\jquery.ui.autocomplete.js" />
     <Content Include="Assets\js\module-extend.js" />
-    <Content Include="Assets\js\common\module.js" />
+    <Content Include="Assets\js\_jquery.ui.autocomplete.js" />
     <Content Include="Modules\Menu\CMS.Web.Modules.Menu.dll" />
     <Content Include="Modules\Menu\CMS.Web.Modules.Menu.pdb" />
-    <Content Include="Modules\Menu\parameters.xml" />
+    <Content Include="Modules\Menu\parameters.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Admin\Home\Index.cshtml" />
     <Content Include="Views\Admin\Menu\Index.cshtml">
       <SubType>Code</SubType>
@@ -172,6 +177,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <None Include="Assets\js\README.md" />
+    <Content Include="Views\Admin\Shared\_ParameterTemplate.cshtml" />
+    <Content Include="Views\Admin\Shared\_FileManagerTemplate.cshtml" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\README_ENU.txt" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\msvcr90.dll" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
@@ -212,9 +220,6 @@
     <None Include="_bin_deployableAssemblies\NuGet.Core.dll" />
     <None Include="_bin_deployableAssemblies\Microsoft.Web.Infrastructure.xml" />
     <None Include="_bin_deployableAssemblies\Microsoft.Web.Infrastructure.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\js\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -271,8 +276,8 @@
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>55009</DevelopmentServerPort>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>51048</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

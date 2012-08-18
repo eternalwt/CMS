@@ -18,6 +18,9 @@ namespace CMS.Data {
 			context.Positions.Add(new Position { PositionName = "Footer" });
 			context.AccessLevels.Add(new AccessLevel { AccessLevelName = "Public" });
 			context.AccessLevels.Add(new AccessLevel { AccessLevelName = "Register" });
+            context.Roles.Add(new Role { RoleName = "Admin" });
+            context.Roles.Add(new Role { RoleName = "Manager" });
+            context.Roles.Add(new Role { RoleName = "User" });
 		}
 	}
 }

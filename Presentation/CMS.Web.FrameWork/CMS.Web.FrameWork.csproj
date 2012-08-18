@@ -36,6 +36,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -47,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\FileHelper.cs" />
+    <Compile Include="Helpers\IFileUpload.cs" />
     <Compile Include="Helpers\JQueryTemplateForEach.cs" />
     <Compile Include="Helpers\ErrorInfo.cs">
       <SubType>Code</SubType>
@@ -76,11 +79,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helpers\MvcForm.cs" />
+    <Compile Include="Helpers\Parameter.cs" />
+    <Compile Include="Helpers\ParameterHelper.cs" />
+    <Compile Include="Helpers\ServerFileUpload.cs" />
+    <Compile Include="Helpers\UploadFileHelper.cs" />
+    <Compile Include="Helpers\UploadPathElement.cs" />
+    <Compile Include="Helpers\UploadPathKeyCollection.cs" />
     <Compile Include="Helpers\ValidationHelper.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\MenuModel.cs" />
     <Compile Include="Models\PagingModel.cs" />
+    <Compile Include="Models\UploadFileModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TemplateViewEngine\BuildManager.cs" />
     <Compile Include="TemplateViewEngine\AdminTemplateRazorViewEngine.cs" />

@@ -1,11 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <config>
-  <group name="Basic">
-    <fields>
-      <field type="select"  name="showSubMenu" default="0">
-        <option value="1">Yes</option>
-        <option value="0">No</option>
-      </field>
-    </fields>
+  <group name="basic" label="Basic">
+    <field type="radio" name="showsubmenu" default="1" label="Show SubMenu">
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </field>
+    <field type="checkbox" name="showsubmenu2" default="1" label="Show SubMenu">
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </field>
+    <field type="select" name="showsubmenu3" default="1" label="Show SubMenu" multiple="true">
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </field>
+    <field type="text" name="cssclassname" default="" label="Css ClasName" description=""></field>
+    <field type="text" name="selectcssclassname" default="" label="Select Css ClasName" description=""></field>
+    <field type="file" name="file" default="" label="File" description="" multiple="true"></field>
+    <field type="textarea" name="notes" default="" label="Notes" description=""></field>
   </group>
 </config>

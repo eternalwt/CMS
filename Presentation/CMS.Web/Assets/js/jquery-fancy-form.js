@@ -1,4 +1,26 @@
 ﻿(function($) {
+	$.fn.jqFile=function() {
+		return this.each(function() {
+			var $fle=$(this);
+			if($fle.attr("type")=="file") {
+				$fle.parent().css({
+					"position": "relative"
+				});
+				$fle.css({
+					"opacity": "0","position": "absolute","left": "0"
+				});
+				var $spnlable=$("<span>Select files...</span>");
+				$spnlable.css({
+					"position": "relative","top": "4px","pointer": "cursor","color": "blue"
+				});
+				$fle
+                .before($spnlable)
+                .change(function() {
+                	alert(this.files);
+                });
+			}
+		});
+	};
 	$.fn.jqBootStrapDropDown=function() {
 		return this.each(function() {
 			if($(this).attr("BSDropDown")!="true") {

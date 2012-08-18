@@ -13,7 +13,7 @@ namespace CMS.Web.FrameWork.Helpers {
 		private ViewContext _viewContext;
 
 		public delegate void DisposeEventHandler(HttpResponseBase httpResponse);
-		public event DisposeEventHandler OnDispose;
+		//public event DisposeEventHandler OnDispose;
 
 		public JavaScript(ViewContext viewContext) {
 			_viewContext = viewContext;

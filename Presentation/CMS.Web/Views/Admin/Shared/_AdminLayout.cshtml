@@ -1,11 +1,11 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
+	<meta charset="utf-8" />
 	<title>CMS :: @ViewBag.Title</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
 	@RenderSection("meta",required :false)
 	<!-- Le styles -->
 	<link href="@Url.Content("~/Assets/css/bootstrap.css")" rel="stylesheet">
@@ -14,15 +14,9 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 	<!-- Le fav and touch icons -->
-	<link rel="shortcut icon" href="@Url.Content("~/Assets/ico/favicon.ico")">
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="@Url.Content("~/Assets/ico/apple-touch-icon-144-precomposed.png")">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="@Url.Content("~/Assets/ico/apple-touch-icon-114-precomposed.png")">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="@Url.Content("~/Assets/ico/apple-touch-icon-72-precomposed.png")">
-	<link rel="apple-touch-icon-precomposed" href="@Url.Content("~/Assets/ico/apple-touch-icon-57-precomposed.png")">
-	<link href="@Url.Content("~/Assets/css/bootstrap-dialog.css")" rel="stylesheet">
-	<link href="@Url.Content("~/Assets/css/jquery.ui.autocomplete.css")" rel="stylesheet">
-	<link href="@Url.Content("~/Assets/css/jquery.ui.datepicker.css")" rel="stylesheet">
-	<link href="@Url.Content("~/Assets/css/site-admin.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Assets/css/jquery-ui-1.8.16.custom.css")" rel="stylesheet"/>
+    <link href="@Url.Content("~/Assets/css/jquery.ui.1.8.16.ie.css")" rel="stylesheet"/>
+	<link href="@Url.Content("~/Assets/css/site-admin.css")" rel="stylesheet"/>
 	@RenderSection("header",required :false)
 </head>
 <body data-spy="scroll" data-target=".subnav" data-offset="50">
@@ -58,26 +52,15 @@
 	<!-- /container -->
 	<script src="@Url.Content("~/Assets/js/jquery-1.7.1.min.js")"></script>
 	<script src="@Url.Content("~/Assets/js/jquery-ui-1.8.21.custom.min.js")"></script>
-	<script src="@Url.Content("~/Assets/js/jquery.ui.autocomplete.js")"></script>
+    <script src="@Url.Content("~/Assets/js/jquery-ui-autoselect.js")"></script>
 	<script src="@Url.Content("~/Assets/js/jquery.tmpl.min.js")"></script>
 	<script src="@Url.Content("~/Assets/js/jquery.bootstrap-table.js")"></script>
 	<script src="@Url.Content("~/Assets/js/jquery-fancy-form.js")"></script>
-	<script src="@Url.Content("~/Assets/js/jHelper.js")"></script>
-	<script src="@Url.Content("~/Assets/js/bootstrap-dialog.js")"></script>
-	<script src="@Url.Content("~/Assets/js/bootstrap-dropdown-search.js")"></script>
-	<script src="@Url.Content("~/Assets/js/bootstrap-transition.js")"></script>
-	<script src="@Url.Content("~/Assets/js/bootstrap-alert.js")"></script>
-	<script src="@Url.Content("~/Assets/js/bootstrap-modal.js")"></script>
-	<script src="@Url.Content("~/Assets/js/bootstrap-dropdown.js")"></script>
-	<script src="@Url.Content("~/Assets/js/bootstrap-scrollspy.js")"></script>
-	<script src="@Url.Content("~/Assets/js/bootstrap-tab.js")"></script>
-	<script src="@Url.Content("~/Assets/js/bootstrap-tooltip.js")"></script>
-	<script src="@Url.Content("~/Assets/js/bootstrap-popover.js")"></script>
-	<script src="@Url.Content("~/Assets/js/bootstrap-button.js")"></script>
-	<script src="@Url.Content("~/Assets/js/bootstrap-collapse.js")"></script>
-	<script src="@Url.Content("~/Assets/js/bootstrap-carousel.js")"></script>
-	<script src="@Url.Content("~/Assets/js/bootstrap-typeahead.js")"></script>
-	<script src="@Url.Content("~/Assets/js/application.js")"></script>
+    <script src="@Url.Content("~/Assets/js/bootstrap.min.js")"></script>
+    <link href="@Url.Content("~/Assets/css/chosen.css")" rel="stylesheet"/>
+    <script src="@Url.Content("~/Assets/js/chosen.jquery.min.js")"></script>
+    <script src="@Url.Content("~/Assets/js/jHelper.js")"></script>
+	
 	@if(IsSectionDefined("script")) {
 		@RenderSection("script")
  }

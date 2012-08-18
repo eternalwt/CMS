@@ -54,5 +54,19 @@ namespace CMS.Data.Service.ModuleTypes {
 			}
 		}
 
-	}
+
+
+        public List<ModuleTypeDetail> GetModuleTypes()
+        {
+            using (CMSContext context = new CMSContext())
+            {
+                return (from moduleType in context.ModuleTypes
+                        select new ModuleTypeDetail
+                        {
+                            ModuleTypeID = moduleType.ModuleTypeID,
+                            ModuleTypeName = moduleType.ModuleTypeName,
+                        }).ToList();
+            }
+        }
+    }
 }

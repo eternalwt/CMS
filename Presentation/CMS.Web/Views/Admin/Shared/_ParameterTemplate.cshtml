@@ -1,0 +1,82 @@
+﻿@using CMS.Web.FrameWork.Helpers
+@using (Html.jQueryTemplateScript("parametertemplate"))
+{
+    <div class="accordion" id="accordion">
+        {{each(i,group) Groups}}
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#${group.GroupName}">
+                    ${group.Label}</a>
+            </div>
+            <div id="${group.GroupName}" class="accordion-body collapse in">
+                <div class="accordion-inner">
+                    {{each(z,f) group.Fields}} {{if f.Type == "text"}}
+                    <div class="control-group">
+                        <label for="${group.GroupName}_${f.Name}" class="control-label">
+                            ${f.Label}</label>
+                        <div class="controls">
+                            @Html.TextBox("${group.GroupName}_${f.Name}", "${f.Value}", new Dictionary<string, object>() { { "class", "input-medium" } })
+                        </div>
+                    </div>
+                    {{/if}} {{if f.Type=="select"}}
+                    <div class="control-group">
+                        <label for="${group.GroupName}_${f.Name}" class="control-label">
+                            ${f.Label}</label>
+                        <div class="controls">
+                            <select name="${group.GroupName}_${f.Name}" id="${group.GroupName}_${f.Name}" class="input-medium" {{if f.IsMultiple == true}}multiple{{/if}} val="${f.Value}">
+                                {{each(y,opt) f.Options}}
+                                <option value="${opt.Value}">${opt.Text}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+                    {{/if}} {{if f.Type=="radio"}}
+                    <div class="control-group">
+                        <label for="${group.GroupName}_${f.Name}" class="control-label">
+                            ${f.Label}</label>
+                        <div class="controls">
+                            {{each(y,opt) f.Options}}
+                            <label class="radio inline">
+                                <input type="radio" id="${group.GroupName}_${f.Name}" name="${group.GroupName}_${f.Name}" value="${opt.Value}" {{if opt.Value == f.Value}}checked{{/if}} />${opt.Text}</label>
+                            {{/each}}
+                        </div>
+                    </div>
+                    {{/if}}
+                    {{if f.Type=="checkbox"}}
+                    <div class="control-group">
+                        <label for="${group.GroupName}_${f.Name}" class="control-label">
+                            ${f.Label}</label>
+                        <div class="controls">
+                            {{each(y,opt) f.Options}}
+                            <label class="checkbox inline">
+                                <input type="checkbox" id="${group.GroupName}_${f.Name}" name="${group.GroupName}_${f.Name}" value="${opt.Value}" {{if (','+f.Value).indexOf(','+opt.Value)>=0}}checked{{/if}} />${opt.Text}</label>
+                            {{/each}}
+                        </div>
+                    </div>
+                    {{/if}} 
+                    {{if f.Type=="file"}}
+                    <div class="control-group">
+                        <label for="${group.GroupName}_${f.Name}" class="control-label">
+                            ${f.Label}</label>
+                        <div class="controls">
+							<input type="hidden" id="${group.GroupName}_${f.Name}" name="${group.GroupName}_${f.Name}" value="${f.Value}" />
+							<input type="button" id="btn_${group.GroupName}_${f.Name}" name="btn_${group.GroupName}_${f.Name}" class="btn" value="Browse" onclick="javascript:_FileManager.open();" />
+                        </div>
+                    </div>
+                    {{/if}}
+                        {{if f.Type=="textarea"}}
+                    <div class="control-group">
+                        <label for="${group.GroupName}_${f.Name}" class="control-label">
+                            ${f.Label}</label>
+                        <div class="controls">
+                            <textarea id="${group.GroupName}_${f.Name}" name="${group.GroupName}_${f.Name}" {{if f.Rows>0}}rows="${f.Rows}"{{/if}} {{if f.Cols>0}}cols="${f.Cols}"{{/if}}>${f.Value}</textarea>
+                        </div>
+                    </div>
+                    {{/if}} 
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+}

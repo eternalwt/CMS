@@ -28,6 +28,8 @@ namespace CMS.Data {
 
 		public DbSet<AccessLevel> AccessLevels { get; set; }
 
+        public DbSet<Role> Roles { get; set; }
+
 		//public CMSContext()
 		//:base(DataSettingsHelper.ConnectionString) {
 		//}

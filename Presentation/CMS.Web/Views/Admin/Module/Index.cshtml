@@ -1,258 +1,223 @@
 ﻿@using CMS.Web.FrameWork.Helpers
 @model CMS.Web.Admin.Models.ModuleModel
 @{
-    ViewBag.Title = "Modules";
-    Layout = "~/Views/Admin/Shared/_AdminLayout.cshtml";
+	ViewBag.Title = "Modules";
+	Layout = "~/Views/Admin/Shared/_AdminLayout.cshtml";
 }
-<div class="page-header">
-    <div class="pull-left">
-        <h1>
-            Modules</h1>
-    </div>
-    <div class="pull-right tool-bar">
-        @Html.Button("New", new Dictionary<string, object>() {
+<div id="PageContent">
+	<div class="page-header">
+		<div class="pull-left">
+			<h1>
+				Modules</h1>
+		</div>
+		<div class="pull-right tool-bar">
+			@Html.Button("New", new Dictionary<string, object>() {
 																{ "id", "new" },
 																{ "class", "btn btn-primary" } 
 														})
-        @Html.Button("Delete", new Dictionary<string, object>() {
+			@Html.Button("Delete", new Dictionary<string, object>() {
 																{ "id", "delete" },
 																{ "class", "btn btn-danger" } 
 														})
-    </div>
-    <div class="clearfix">
-        &nbsp;</div>
+		</div>
+		<div class="clearfix">
+			&nbsp;</div>
+	</div>
+	<div class="grid-box">
+		<table class="table table-bordered span12" id="modulelist">
+			<thead>
+				<tr>
+					<th class="span1" style="text-align: center">
+						@Html.CheckBox("selectall", false)
+					</th>
+					<th class="span3" sortname="ModuleName">
+						Module Name
+					</th>
+					<th class="span1" sortname="ModuleTypeName">
+						Type
+					</th>
+					<th class="span2" sortname="PositionName">
+						Position
+					</th>
+					<th class="span1" sortname="SortOrder">
+						Order
+					</th>
+					<th class="span2" sortname="AccessLevelName">
+						Access Level
+					</th>
+					<th class="span1" sortname="IsPublish">
+						Publish
+					</th>
+					<th class="span1">
+					</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
 </div>
-<div class="grid-box">
-    <table class="table table-bordered span12" id="modulelist">
-        <thead>
-            <tr>
-                <th class="span1" style="text-align: center">
-                    @Html.CheckBox("selectall", false)
-                </th>
-                <th class="span3" sortname="ModuleName">
-                    Module Name
-                </th>
-                <th class="span1" sortname="ModuleTypeName">
-                    Type
-                </th>
-                <th class="span2" sortname="PositionName">
-                    Position
-                </th>
-                <th class="span1" sortname="SortOrder">
-                    Order
-                </th>
-                <th class="span2" sortname="AccessLevelName">
-                    Access Level
-                </th>
-                <th class="span1" sortname="IsPublish">
-                    Publish
-                </th>
-                <th class="span1">
-                </th>
-            </tr>
-        </thead>
-    </table>
-</div>
-<div class="bootdialog hide" id="EditModule">
-    <div class="bootdialog-header">
-        <a data-dismiss="bootdialog" class="close">&times</a>
-        <h3>
-            Module</h3>
-    </div>
-    <div class="bootdialog-body container_12">
-    </div>
-    <div class="bootdialog-footer">
-        @Html.Button("Close", new Dictionary<string, object>() {
+<div id="EditModule" class="hide">
+	<div class="bootdialog-body">
+	</div>
+	<div class="row footer">
+		<div class="pull-right">
+			@Html.Button("Close", new Dictionary<string, object>() {
 																{ "id", "close" },
-																{ "class", "btn input-small" } 
+																{ "class", "btn input-small" } ,
+                                                                { "dialog-close", "true" }
 														})
-        @Html.Button("Save", new Dictionary<string, object>() {
+			@Html.Button("Save", new Dictionary<string, object>() {
 																{ "id", "save" },
 																{ "class", "btn btn-primary input-small" },
 																{ "data-loading-text", "Saving" },
 														})
-    </div>
+		</div>
+	</div>
 </div>
 @section script{
-    @using (Html.jQueryTemplateScript("edittemplate"))
-    {
-        using (Html.Form(new { @id = "frmEditModule", @class = "form-horizontal", @onsubmit = "return false" }))
-        {
-        @Html.Hidden("SortOrder", "${SortOrder}")
-        @Html.Hidden("ModuleID", "${ModuleID}")
-        <div class="col_6">
-            <div class="control-group">
-                <label for="ModuleName" class="control-label">
-                    Name</label>
-                <div class="controls">
-                    @Html.TextBox("ModuleName", "${ModuleName}", new { @class = "input-xlarge" })
-                </div>
-            </div>
-            <div class="control-group">
-                <label for="PositionName" class="control-label">
-                    Module Type</label>
-                <div class="controls">
-                    @Html.TextBox("ModuleTypeName", "${ModuleTypeName}", new { @class = "input-medium" })
-                    @Html.Hidden("ModuleTypeID", "${ModuleTypeID}")
-                </div>
-            </div>
-            <div class="control-group">
-                <label for="PositionName" class="control-label">
-                    Position</label>
-                <div class="controls">
-                    @{
-            List<SelectListItem> positions = (from position in Model.Positions
-                                              select new SelectListItem
-                                              {
-                                                  Text = position.PositionName,
-                                                  Value = position.PositionID.ToString()
-                                              }).ToList();
-            positions.Insert(0, new SelectListItem { Text = "--Select One--", Value = "0" });
-                    }
-                    @Html.DropDownList("PositionID", positions, new { @val = "${PositionID}", @class = "input-medium" })
-                </div>
-            </div>
-            <div class="control-group">
-                <label for="multiSelect" class="control-label">
-                    Access</label>
-                <div class="controls">
-                    @{
-            List<SelectListItem> accessLevels = (from access in Model.AccessLevels
-                            select new SelectListItem
-                            {
-                                Text = access.AccessLevelName,
-                                Value = access.AccessLevelID.ToString()
-                            }).ToList();
+	@using (Html.jQueryTemplateScript("edittemplate")) {
+	 using (Html.Form(new { @id = "frmEditModule", @class = "form-horizontal", @onsubmit = "return false" })) {
+		@Html.Hidden("SortOrder", "${SortOrder}")
+		@Html.Hidden("ModuleID", "${ModuleID}")
+		<div class="page-header edit">
+			<h3>
+				{{if ModuleID>0}}Edit Module{{else}}Create Module{{/if}}</h3>
+		</div>
+		<div class="row">
+			<div class="span6">
+				<div class="control-group">
+					<label for="ModuleName" class="control-label">
+						Name</label>
+					<div class="controls">
+						@Html.TextBox("ModuleName", "${ModuleName}", new { @class = "input-xlarge" })
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="PositionName" class="control-label">
+						Module Type</label>
+					<div class="controls">
+						@{
+		 List<SelectListItem> moduleTypes = (from moduleType in Model.ModuleTypes
+											 select new SelectListItem {
+												 Text = moduleType.ModuleTypeName,
+												 Value = moduleType.ModuleTypeID.ToString()
+											 }).ToList();
+		 moduleTypes.Insert(0, new SelectListItem { Text = "", Value = "" });
+						}
+						@Html.DropDownList("ModuleTypeID", moduleTypes, new Dictionary<string, object>() { { "allow_single_deselect", "true" }, { "data-placeholder", "Choose a module type" }, { "val", "${ModuleTypeID}" }, { "class", "input-large" } })
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="PositionName" class="control-label">
+						Position</label>
+					<div class="controls">
+						@{
+		 List<SelectListItem> positions = (from position in Model.Positions
+										   select new SelectListItem {
+											   Text = position.PositionName,
+											   Value = position.PositionID.ToString()
+										   }).ToList();
+		 positions.Insert(0, new SelectListItem { Text = "", Value = "" });
 
-            accessLevels.Insert(0, new SelectListItem { Text = "--Select One--", Value = "0" });
-                    }
-                    @Html.DropDownList("AccessLevelID", accessLevels, new { @val = "${AccessLevelID}", @class = "input-medium" })
-                </div>
-            </div>
-            <div class="control-group">
-                <label for="IsPublish" class="control-label">
-                    Publish Up</label>
-                <div class="controls">
-                    @Html.TextBox("PublishUp", "${PublishUp}", new Dictionary<string, object>() { { "class", "input-small" }, { "date-picker", "true" } })
-                </div>
-            </div>
-            <div class="control-group">
-                <label for="IsPublish" class="control-label">
-                    Publish Down</label>
-                <div class="controls">
-                    @Html.TextBox("PublishDown", "${PublishDown}", new Dictionary<string, object>() { { "class", "input-small" }, { "date-picker", "true" } })
-                </div>
-            </div>
-            <div class="control-group">
-                <label for="IsPublish" class="control-label">
-                    Publish</label>
-                <div class="controls">
-                    @Html.CheckBox("IsPublish", false, new { @class = "fancy-chk", @val = "${IsPublish}" })
-                </div>
-            </div>
-        </div>
-        <div class="col_6">
-            <div class="accordion" id="accordion2">
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                            Collapsible Group Item #1 </a>
-                    </div>
-                    <div id="collapseOne" class="accordion-body collapse in">
-                        <div class="accordion-inner">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                            ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
-                            truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put
-                            a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
-                            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                            Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
-                            raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                            labore sustainable VHS.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                            Collapsible Group Item #2 </a>
-                    </div>
-                    <div id="collapseTwo" class="accordion-body collapse">
-                        <div class="accordion-inner">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                            ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
-                            truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put
-                            a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
-                            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                            Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
-                            raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                            labore sustainable VHS.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                            Collapsible Group Item #3 </a>
-                    </div>
-                    <div id="collapseThree" class="accordion-body collapse">
-                        <div class="accordion-inner">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                            ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
-                            truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put
-                            a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
-                            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                            Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
-                            raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                            labore sustainable VHS.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="clear">
-            &nbsp;</div>
-        }
-    }
-    @using (Html.jQueryTemplateScript("gridtemplate"))
-    {
-        <text>{{each(i,row) rows}}</text>
-        <tr>
-            <td class="span1" style="text-align: center">
-                @Html.CheckBox("ModuleID", false, new { @value = "${row.ModuleID}" })
-            </td>
-            <td class="span3">
-                @Html.Anchor("${ModuleName}", new { @rel = "tooltip", @title = "Edit", @style = "cursor:pointer" })
-            </td>
-            <td class="span1">
-                ${ModuleTypeName}
-            </td>
-            <td class="span2">
-                ${PositionName}
-            </td>
-            <td class="span1">
-                ${SortOrder}
-            </td>
-            <td class="span2">
-                ${AccessLevelName}
-            </td>
-            <td class="span1">
-                ${IsPublish}
-            </td>
-            <td class="span1">
-                @Html.Anchor("<i class='icon-edit'>&nbsp;</i>", new { @rel = "tooltip", @title = "Edit", @style = "cursor:pointer" })
-            </td>
-        </tr>
-        <text>{{/each}}</text>
-    }
-    @using (Html.jQueryTemplateScript("errortemplate"))
-    {
-        <div class='alert alert-error'>
-            <a data-dismiss="alert" class="close">&times</a>
-            <text>{{each(i,err) Errors}}</text>
-            ${err.ErrorMessage}<br />
-            <text>{{/each}}</text>
-        </div>
-    }
-    <script src="@Url.Content("~/Assets/js/common/module.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Assets/js/module-extend.js")" type="text/javascript"></script>
+						}
+						@Html.DropDownList("PositionID", positions, new Dictionary<string, object>() { { "allow_single_deselect", "true" }, { "data-placeholder", "Choose a position" }, { "val", "${PositionID}" }, { "class", "input-large" } })
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="multiSelect" class="control-label">
+						Access</label>
+					<div class="controls">
+						@{
+		 List<SelectListItem> accessLevels = (from access in Model.AccessLevels
+											  select new SelectListItem {
+												  Text = access.AccessLevelName,
+												  Value = access.AccessLevelID.ToString()
+											  }).ToList();
+						}
+						@Html.DropDownList("AccessLevelID", accessLevels, new Dictionary<string, object>() { { "allow_single_deselect", "true" }, { "data-placeholder", "Choose a access level" }, { "val", "${AccessLevelID}" }, { "class", "input-large" } })
+					</div>
+				</div>
+				<div id="selectRoles" class="control-group {{if AccessLevelID == 1}}hide{{/if}}">
+					<label for="PositionName" class="control-label">
+						Roles</label>
+					<div class="controls">
+						@{
+		 List<SelectListItem> roles = (from role in Model.Roles
+									   select new SelectListItem {
+										   Text = role.RoleName,
+										   Value = role.RoleID.ToString()
+									   }).ToList();
+						}
+						@Html.DropDownList("RolesIDs", roles, new Dictionary<string, object>() { { "allow_single_deselect", "true" }, { "data-placeholder", "Choose a roles..." }, { "val", "{{each(i,roleID) ModulesInRoles}}${roleID},{{/each}}" }, { "multiple", "multiple" }, { "class", "input-large" } })
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="IsPublish" class="control-label">
+						Publish Up</label>
+					<div class="controls">
+						@Html.TextBox("PublishUp", "${PublishUpFormat}", new Dictionary<string, object>() { { "class", "input-small" }, { "date-picker", "true" } })
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="IsPublish" class="control-label">
+						Publish Down</label>
+					<div class="controls">
+						@Html.TextBox("PublishDown", "${PublishDownFormat}", new Dictionary<string, object>() { { "class", "input-small" }, { "date-picker", "true" } })
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="IsPublish" class="control-label">
+						Publish</label>
+					<div class="controls">
+						@Html.CheckBox("IsPublish", false, new { @class = "fancy-chk", @val = "${IsPublish}" })
+					</div>
+				</div>
+			</div>
+			<div class="span6" id="parameters">
+			</div>
+		</div>
+	 }
+ }
+	@using (Html.jQueryTemplateScript("gridtemplate")) {
+		<text>{{each(i,row) rows}}</text>
+		<tr>
+			<td class="span1" style="text-align: center">
+				@Html.CheckBox("ModuleID", false, new { @value = "${row.ModuleID}" })
+			</td>
+			<td class="span3">
+				@Html.Anchor("${ModuleName}", new { @rel = "tooltip", @title = "Edit", @style = "cursor:pointer" })
+			</td>
+			<td class="span1">
+				${ModuleTypeName}
+			</td>
+			<td class="span2">
+				${PositionName}
+			</td>
+			<td class="span1">
+				${SortOrder}
+			</td>
+			<td class="span2">
+				${AccessLevelName}
+			</td>
+			<td class="span1">
+				${IsPublish}
+			</td>
+			<td class="span1">
+				@Html.Anchor("<i class='icon-edit'>&nbsp;</i>", new { @rel = "tooltip", @title = "Edit", @style = "cursor:pointer" })
+			</td>
+		</tr>
+		<text>{{/each}}</text>
+ }
+	@using (Html.jQueryTemplateScript("errortemplate")) {
+		<div class='alert alert-error'>
+			<a data-dismiss="alert" class="close">&times</a>
+			<text>{{each(i,err) Errors}}</text>
+			${err.ErrorMessage}<br />
+			<text>{{/each}}</text>
+		</div>
+ }
+	
+	@{Html.RenderPartial("_ParameterTemplate");}
+	@{Html.RenderPartial("_FileManagerTemplate");}
+	<script src="@Url.Content("~/Assets/js/module.js")" type="text/javascript"></script>
+	<script src="@Url.Content("~/Assets/js/module-extend.js")" type="text/javascript"></script>
 }
